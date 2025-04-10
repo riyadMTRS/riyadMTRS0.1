@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riyad Hossain | MTRS AI Agents</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%);
+      color: #00ffe0;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 100px 20px;
+    }
+    header h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 20px #00ffe0;
+    }
+    .orb {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto 40px;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      color: #ffffff;
+      text-shadow: 0 0 10px #00ffe0;
+    }
+    .card {
+      background: rgba(0, 255, 224, 0.1);
+      border: 1px solid #00ffe0;
+      border-radius: 20px;
+      padding: 20px;
+      margin: 20px 0;
+      backdrop-filter: blur(10px);
+    }
+    canvas {
+      display: block;
+      margin: auto;
+    }
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 0.8rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="orb">
+      <canvas id="orbCanvas"></canvas>
+    </div>
+    <h1>Riyad Hossain</h1>
+    <p>Founder of MTRS AI Agents | Building the Future with AI</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <div class="card">
+      <p>I’m Riyad Hossain, a self-educated AI visionary. Founder of <strong>MTRS AI Agents</strong>, where I’m developing hyper-futuristic AI systems for industrial use. My goal: build a fully autonomous AI-driven company infrastructure and next-level marketing AI agents.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>My Work</h2>
+    <div class="card">
+      <p>Currently building an AI marketing agent that automates industrial-scale marketing across platforms: social media, influencer networks, outdoor advertising, celebrity partnerships, and more — all powered by AI.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>My Resources</h2>
+    <div class="card">
+      <p>This section will soon showcase tools, code, and AI blueprints I've developed. Updates will be posted as each project progresses.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>News</h2>
+    <div class="card">
+      <p>Follow my progress as I develop the world’s most advanced AI marketing system. Major updates and milestones will be shared here.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Want to collaborate or join the mission? Reach out via <strong>riyad.ai@gmail.com</strong> or connect through social media (coming soon).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Chat with AI Riyad</h2>
+    <div class="card">
+      <p>Coming soon: A GPT-powered chatbot version of me that will answer your questions, help with marketing strategies, and show the power of MTRS AI.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Riyad Hossain • MTRS AI Agents
+  </footer>
+
+  <!-- GSAP Animation Placeholder -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- Optional: Three.js 3D Orb Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('orbCanvas'), alpha: true });
+    renderer.setSize(300, 300);
+    
+    const geometry = new THREE.SphereGeometry(1, 64, 64);
+    const material = new THREE.MeshStandardMaterial({ color: 0x00ffe0, wireframe: true });
+    const orb = new THREE.Mesh(geometry, material);
+    scene.add(orb);
+
+    const light = new THREE.PointLight(0xffffff, 1, 100);
+    light.position.set(5, 5, 5);
+    scene.add(light);
+
+    camera.position.z = 3;
+
+    function animate() {
+      requestAnimationFrame(animate);
+      orb.rotation.x += 0.005;
+      orb.rotation.y += 0.01;
+      renderer.render(scene, camera);
+    }
+    animate();
+  </script>
+</body>
+</html>
